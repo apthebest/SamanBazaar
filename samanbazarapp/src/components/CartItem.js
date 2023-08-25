@@ -42,9 +42,9 @@ const CartItem = ({id,img,title,price,amount}) => {
       
       </ul>
       <div className="quantity">
-        <span className='quantity-manip' style={{padding:' 0 0.2rem 0 0.2rem',borderRight:'1px solid black'}} onClick ={()=>handleDecrease(id)} >- </span>
+        <span className='quantity-manip' style={{padding:' 0 0.2rem 0 0.2rem',borderRight:'1px solid rgb(179, 179, 167)'}} onClick ={()=>handleDecrease(id)} >- </span>
         <span style={{fontSize:'1rem',padding:'0 0.2rem 0 0.2rem'}} >{amount} </span> 
-       <span  className='quantity-manip' style={{padding:' 0 0.1rem 0 0.1rem',borderLeft:'1px solid black'}} onClick ={()=>handleIncrease(id)}>+</span>
+       <span  className='quantity-manip' style={{padding:' 0 0.1rem 0 0.1rem',borderLeft:'1px solid rgb(179, 179, 167)'}} onClick ={()=>handleIncrease(id)}>+</span>
       </div>
        
     </section>

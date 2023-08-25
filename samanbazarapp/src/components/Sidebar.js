@@ -1,16 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import {AiFillCloseSquare} from 'react-icons/ai'
-
+import { useGlobalContext } from '../context'
 const Sidebar = () => {
+  const {showSidebar,closeSidebar} = useGlobalContext();
   return (
-    <aside className='sidebar show-sidebar'>
-        <nav style={{alignSelf:'flex-end'}}>
-      <AiFillCloseSquare></AiFillCloseSquare>
-        </nav>
-         <Link className='link' to="/">Home</Link>        
-          <Link className='link' to="/about">About</Link>
-          <Link className='link'  to="/cart">Cart</Link>
+    <aside className={ showSidebar?`sidebar show-sidebar`:`sidebar`}>
+      
+        <div className="home-container" >
+<Link  to="/" className='sidebar-link'>Home</Link>
+<span onClick={closeSidebar} className='close-sidebar-btn'><AiFillCloseSquare></AiFillCloseSquare></span> 
+        </div>
+         
+          <Link  to="/about"className='sidebar-link'>About</Link>
+          <Link  to="/cart"className='sidebar-link'>Cart</Link>
     </aside>
   )
 }

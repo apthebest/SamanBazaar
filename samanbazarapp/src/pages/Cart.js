@@ -6,9 +6,10 @@ import {BsEmojiSmileUpsideDownFill} from 'react-icons/bs'
 const Cart = () => {
   const {clearCart} = useGlobalContext();
   const {cartItems,setCartItems,modal,setModal} = useGlobalContext();
-    const total = cartItems.reduce((accumulator, currentItem) => {
+    const finalAmount = cartItems.reduce((accumulator, currentItem) => {
     return accumulator + currentItem.price* currentItem.amount;
-}, 0);
+}, 0).toFixed(2);
+ 
   const handlePlaceOrderClick = () => {
     setCartItems([]);
     setModal('Order placed successfully');
@@ -25,7 +26,7 @@ const Cart = () => {
     
   <div className="empty-cart">
     
-   <div className="order-success">{modal}</div>
+   <div className="modal-message">{modal}</div>
     {modal ===''? <>
     <div className="emoji-container"><BsEmojiSmileUpsideDownFill></BsEmojiSmileUpsideDownFill></div>
     <h3>Your Bag Seems To Be Empty.</h3></>:''}
@@ -39,7 +40,7 @@ const Cart = () => {
       {cartItems.map((item)=>{
         return <CartItem key ={item.id} {...item}></CartItem>
       })}
-      <p style={{fontFamily:'arial',fontSize:'1.2rem',textAlign:'center',marginBottom:'1rem'}}>You need to pay: <b>{total}$</b></p>
+      <p style={{fontFamily:'arial',fontSize:'1.2rem',textAlign:'center',marginBottom:'1rem'}}>You need to pay: <b>{finalAmount}$</b></p>
       <button className='order-btn' onClick={handlePlaceOrderClick}>Place Order</button>
      
     </main>

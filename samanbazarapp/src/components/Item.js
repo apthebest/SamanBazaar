@@ -7,23 +7,23 @@ const Item = ({id,title,price,img}) => {
     // if our cart has zero items
     if(cartItems.length === 0){
       setCartItems([{id,title,price,img,amount:1}]);
-      return;
     }
     //if our cart has non-zero items
     else{
-      let otherItems = cartItems.filter((cartItem)=>cartItem.id !==id);
-      let repeatedItem = cartItems.filter((cartItem)=>cartItem.id ===id);
-      if(repeatedItem.length === 0){
-        setCartItems((prevItem)=>{
-          return [...prevItem,{id,img,title,price,amount:1}];
-        })
-      }
-      else{
-        let itemRepeated = repeatedItem[0];
-        itemRepeated.amount+=1;
-        const newItems = [...otherItems,itemRepeated];
-        setCartItems(newItems);
-      }
+     // Filter out items with a different ID
+let otherItems = cartItems.filter((cartItem) => cartItem.id !== id);
+
+// Find the item with the same ID
+let repeatedItem = cartItems.find((cartItem) => cartItem.id === id);
+
+if (!repeatedItem) {
+  // If the item doesn't exist in the cart, add it with an amount of 1
+  setCartItems((prevItems) => [...prevItems, { id, img, title, price, amount: 1 }]);
+} else {
+  // If the item already exists, increase its amount by 1
+  repeatedItem.amount += 1;
+  setCartItems([...otherItems, repeatedItem]);
+}
     }
     setModal('Item Added To your Bag')
     

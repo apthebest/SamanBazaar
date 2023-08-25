@@ -4,14 +4,14 @@ import {AiOutlineShoppingCart } from "react-icons/ai";
 import { useGlobalContext } from '../context';
 import {FaBars} from 'react-icons/fa'
 const Navbar = () => {
-  const {cartItems} = useGlobalContext();
+  const {cartItems,openSidebar} = useGlobalContext();
   const handleSubmit = (e) =>{
     e.preventDefault();
   }
   return (
     <nav className={"navbar"}>
         <Link to="/" className='home-link'>SamanBazaar</Link>
-     <button className="toggle-btn"><FaBars ></FaBars></button> 
+     <button className="toggle-btn" onClick={openSidebar}><FaBars ></FaBars></button> 
     
            
       <ul className='nav-links'>
