@@ -6,11 +6,8 @@ const AppProvider = ({children})=>{
     const [cartItems,setCartItems] = useState([]);
    const [modal,setModal] = useState('');
     const [showSidebar,setShowSidebar] = useState(false);
-    const closeSidebar = function(){
-        setShowSidebar(false);
-    }
-    const openSidebar = function(){
-        setShowSidebar(true);
+    const toggleSidebar = function(){
+        setShowSidebar(!showSidebar);
     }
    //function to remove an item from cart
    const removeCartItem = (id) =>{
@@ -18,7 +15,7 @@ const AppProvider = ({children})=>{
     setCartItems(newCart);
    }
 return( 
-<AppContext.Provider value = {{cartItems,setCartItems,modal,setModal,removeCartItem,closeSidebar,showSidebar,openSidebar}}>
+<AppContext.Provider value = {{cartItems,setCartItems,modal,setModal,removeCartItem,showSidebar,toggleSidebar}}>
     {children}
 </AppContext.Provider>
 );
