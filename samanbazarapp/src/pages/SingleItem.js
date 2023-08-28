@@ -30,7 +30,7 @@ let repeatedItem = cartItems.find((cartItem) => cartItem.id === ourId);
 
 if (!repeatedItem) {
   // If the item doesn't exist in the cart, add it with an amount of 1
-  setCartItems((prevItems) => [...prevItems, { ourId, img, title, price, amount: 1 }]);
+  setCartItems((prevItems) => [...prevItems, { id:ourId, img, title, price, amount: 1 }]);
 } else {
   // If the item already exists, increase its amount by 1
   repeatedItem.amount += 1;

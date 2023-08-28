@@ -10,16 +10,17 @@ const Navbar = () => {
   }
   return (
     <nav className={"navbar"}>
-        <Link to="/" className='home-link'>SamanBazaar</Link>
-     <button className="toggle-btn" onClick={toggleSidebar}><FaBars ></FaBars></button> 
+       <button className="toggle-btn" onClick={toggleSidebar}><FaBars ></FaBars></button> 
+    <Link to="/" className='home-link'>SamanBazaar</Link>
     
            
       <ul className='nav-links'>
         
           <Link className='link' to="/">Home</Link>        
           <Link className='link' to="/about">About</Link>
-         
-          <Link className='link' style={{fontSize:'1.5rem'}} to="/cart"><AiOutlineShoppingCart></AiOutlineShoppingCart><span style={{fontSize:'1rem'}}>{cartItems.length>0?`(${cartItems.length})`:''}</span></Link>
+                <Link className='link' style={{fontSize:'1.2rem'}}  to="/cart"><AiOutlineShoppingCart></AiOutlineShoppingCart><span style={{fontSize:'1rem'}}>{cartItems.length>0?`(${cartItems.length})`:''}</span></Link>
+
+          
        
       </ul>
     </nav>

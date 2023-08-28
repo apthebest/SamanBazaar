@@ -9,6 +9,7 @@ import About from './pages/About'
 import Cart from './pages/Cart';
 import Footer from './components/Footer';
 import SingleItem from './pages/SingleItem'
+import Error from './pages/Error';
   function App() {
   return (
     <BrowserRouter>
@@ -19,7 +20,7 @@ import SingleItem from './pages/SingleItem'
         <Route path='about' element={<About />} />
         <Route path ="/cart" element = {<Cart></Cart>}></Route>
         <Route path ="/item/:id" element = {<SingleItem></SingleItem>}/>
-        {/* <Route path='*' element={<Error />} /> */}
+        <Route path='*' element={<Error />} />
       </Routes>
       <Footer/>
     </BrowserRouter>
