@@ -2,8 +2,16 @@
   margin:0;
   padding:0;
   box-sizing: border-box;
+  font-family:cursive;
   Link:hover{
     color:white;
+  }
+ 
+}
+@media screen and (max-width:600px)
+{
+  *{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 }
 
@@ -11,12 +19,10 @@
   margin:1rem;
   height:max-content;
   width:15rem;
-  
   border:0.1px solid rgb(197, 202, 197);
   text-align: center;
   border-radius: 0.3rem;
   box-shadow: 0.3rem 0.3rem #f4f1f1;
-  /* padding-bottom: 2rem; */
  
 }
 .main-item:hover{
@@ -33,9 +39,6 @@
   width: inherit;
   padding-right:0.1rem;
   border-radius: 0.3rem 0.3rem 0rem 0rem; 
-  
-  
-  
 }
 
 .add-btn{
@@ -44,61 +47,61 @@
   padding: 0.3rem;
   border-radius: 0.3rem;
   margin: 0.4rem 0 0.6rem 0;
-  font-family:Arial, Helvetica, sans-serif;
-  border:hidden;
-    
+  border:hidden; 
 }
 .add-btn:hover {
   background-color: #154b65;
 }
 .items-container{
-
   display:flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   margin-top: 1rem;
-  
 }
-
 .item-container{
   margin:0.5rem 0;
-  font-family:cursive;
   z-index:1;
-color: #3f7ae1;
-  
-  
+  color: #3f7ae1;  
 }
 
+
+/* navbar */
 .navbar{
   display:flex;
-  padding:1rem;
   background-color: rgba(7, 119, 117, 0.959);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   align-items: center;
   justify-content: space-between;
   color:rgb(219, 235, 235);
   width: 100%;
+  padding:0.2rem 0.9rem ;
 
-    
+}
+.cart-link{
+  text-decoration: none;
+  display:none;
+  color:rgb(233, 227, 69);
+}
+.cart-link:hover{
+  color:#ededd5;
+
 }
 .home-link{
   text-decoration: none;
-  color:#fcfc00;
-  font-family:cursive;
-  font-size:larger;
+  color:#eeee4e;
+  font-size: 1.2rem;
+ 
 }
 .home-link:hover{
   animation: heading 2s ease-in-out;
 }
 @keyframes heading {
   25%{
-   
-    translate: 5%;
-    color:#3cff6d89
+    translate: 3%;
   }
   
 }
+
 .toggle-btn{
   display:none;
   background-color: initial;
@@ -122,12 +125,11 @@ color: #3f7ae1;
   display: flex;
   flex-direction: row;
   padding-left: 1rem;
-  margin-right:3rem;
+  /* margin-right:3rem; */
   justify-content: space-between;
-    align-items: center;
-
-  
+  align-items: center;
 }
+
 @media screen and (max-width:600px) {
   .nav-links{
     display: none;
@@ -136,33 +138,44 @@ color: #3f7ae1;
     padding:0.7rem;
     width: 100%;
   }
+  .cart-link{
+    display: inline;
+  }
 
   .toggle-btn{
     display: inline;
   }
+  
 }
+
 .link{
   justify-content: space-between;
-  margin-left: 1rem;
   text-decoration: none;
   color:rgb(251, 245, 82);
+  padding:  0.8rem 0.5rem;
+ 
+}
+.link:focus {
+  color:#17428d;
+  
 
 }
 .link:hover{
-  color:aliceblue;
+  color: #ededd5;
 }
 
+/* about page */
 .about{
   text-align:center;
   position: relative;
   top:2rem;
-  font-family:Arial, Helvetica, sans-serif;
-  
+ 
 }
 
+
+/* cart */
+
 .empty-cart{
-  /* text-align: center; */
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
   width: 100vw;
   margin: auto;
   padding-bottom: 1rem;
@@ -173,7 +186,7 @@ color: #3f7ae1;
 
 .order-success{
   margin-bottom: 2rem;
-color:rgb(59, 158, 13);
+  color:rgb(59, 158, 13);
 }
 
 .cart-item{
@@ -187,7 +200,7 @@ color:rgb(59, 158, 13);
   padding: 0 1rem 0rem 0rem;
   border-radius:0.2rem;
   align-items: center;
-  font-family: verdana;
+  margin-left: 2rem;
   
 }
 .cart-list{
@@ -211,7 +224,7 @@ color:rgb(59, 158, 13);
   align-items: baseline;
   justify-content: center;
   padding-top: 0.3rem;
-  font-family: cursive;
+
 }
 .remove-btn {
   color: rgb(243, 9, 9);
@@ -219,22 +232,18 @@ color:rgb(59, 158, 13);
   border: 0;
   background-color: inherit;
   margin-top: 0.2rem;
-  font-family: cursive;
-
 }
 
 .remove-btn:hover {
   color: rgb(188, 1, 1);
 }
-@media screen and (max-width:800px) {
+@media screen and (max-width:600px) {
   .cart-desc{
     display:flex;
     font-size:small;
-    
-    
   }
   .cart-item{
-   margin-left:3.6rem;
+   margin-left:1.5rem;
    
   }
   .cart-img{
@@ -273,10 +282,11 @@ color:rgb(59, 158, 13);
    
 }
 .cart-header{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+ 
   font-size:2rem;
   text-align: center;
   margin-bottom: 1rem;
+  padding:1rem
 }
 
 .order-btn{
@@ -298,7 +308,7 @@ color:rgb(59, 158, 13);
 
 .footer{
   text-align: center;
-  font-family: arial;
+
   padding:0.3rem;
   margin-top: 3rem;
   color:rgb(4, 61, 147);
@@ -337,7 +347,7 @@ color:rgb(59, 158, 13);
 display:flex;
 height: max-content;
 width: fit-content;
-font-family: arial;
+
 padding:0.5rem;
 }
 
@@ -383,11 +393,10 @@ padding:0.5rem;
 
 .modal-message {
   text-align: center;
-  font-family: cursive;
   color:rgb(51, 149, 205);
-  padding-top:0.2rem;
-  transition: 1ms;
-  z-index:100;
+  background-color: #eeee4e;
+  width: 100vw;
+  
   
 }
 
@@ -398,7 +407,7 @@ padding:0.5rem;
   justify-content: space-between;
   align-items: baseline;
   background-color: white;
-  font-family: cursive;
+ 
   display: none ;
   position: absolute;
   width: 20%;
@@ -464,5 +473,79 @@ padding:0.5rem;
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
-  font-family: cursive;
+  
 }
+
+/* home-page */
+.home{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: #036efb;
+  background-color: #f8f88d;
+  height: 93vh;
+}
+
+.home-heading{
+ text-align: center;
+ font-size: larger;
+ margin-top: 2rem;
+  font-size: 4rem;
+}
+
+.product-link{
+ 
+  /* text-decoration: none; */
+  color:rgb(7, 85, 255);
+  font-size: 2rem;
+  animation: my-animation 2s ease-in;
+
+}
+
+.product-link:hover{
+  background-color: #f4f1f1;
+  padding: 0.5rem;
+  color:#036efb;
+  
+  
+}
+.home-img{
+  height: 20rem;
+  width: 20rem;
+  
+}
+.product-navbar{
+  margin-top: 0.4rem;
+}
+.product-links{
+  display:flex;
+  list-style-type: none;
+  justify-content: center;
+  
+}
+
+.category-link{
+  text-decoration: none;
+  padding: 0.1rem 0.3rem;
+  margin-left:1rem;
+  color:#7199ce;
+  border-radius: 0.2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border:0;
+  background-color: inherit;
+}
+.category-link:hover{
+  background-color: #e5bc7f;
+}
+
+.category-link:focus{
+  background-color: #07337e;
+  color:white;
+} 
+.category-link:visited{
+  background-color: #07337e;
+    color: white;
+}
+
+

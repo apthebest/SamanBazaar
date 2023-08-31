@@ -10,6 +10,7 @@ import Cart from './pages/Cart';
 import Footer from './components/Footer';
 import SingleItem from './pages/SingleItem'
 import Error from './pages/Error';
+import Products from './pages/Products';
   function App() {
   return (
     <BrowserRouter>
@@ -17,7 +18,9 @@ import Error from './pages/Error';
      <Sidebar></Sidebar>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='about' element={<About />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/products' element={<Products />} />
+        
         <Route path ="/cart" element = {<Cart></Cart>}></Route>
         <Route path ="/item/:id" element = {<SingleItem></SingleItem>}/>
         <Route path='*' element={<Error />} />
