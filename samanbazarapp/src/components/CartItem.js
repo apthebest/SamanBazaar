@@ -1,11 +1,9 @@
 import React from 'react'
 import { useGlobalContext } from '../context'
-import {BsFillArrowUpCircleFill,BsFillArrowDownCircleFill} from 'react-icons/bs'
-import {GrAdd, GrSubtract} from 'react-icons/gr'
+import { useNavigate } from 'react-router-dom';
 const CartItem = ({id,img,title,price,amount}) => {
   const {cartItems,setCartItems,removeCartItem} = useGlobalContext();
-
- 
+  
   const handleDecrease = (id)=>{
    
     setCartItems(prevCartItems => {
@@ -29,9 +27,9 @@ const CartItem = ({id,img,title,price,amount}) => {
     });
     }
   return (
-    <section className="cart-item">
-      <ul className ="cart-list">
-        <img src={img} alt="item-img" className='cart-img'/>
+    <section className="cart-item" >
+      <ul className ="cart-list" >
+        <img src={img} alt="item-img" className='cart-img' />
        <div className="cart-desc">
         <span>Item: <b>{title}</b>
         </span>
@@ -42,9 +40,9 @@ const CartItem = ({id,img,title,price,amount}) => {
       
       </ul>
       <div className="quantity">
-        <span className='quantity-manip' style={{padding:' 0 0.2rem 0 0.2rem',borderRight:'1px solid rgb(179, 179, 167)'}} onClick ={()=>handleDecrease(id)} >- </span>
+        <span className='quantity-manip' style={{padding:' 0 0.2rem 0 0.2rem',borderRight:'1px solid black'}} onClick ={()=>handleDecrease(id)} >- </span>
         <span style={{fontSize:'1rem',padding:'0 0.2rem 0 0.2rem'}} >{amount} </span> 
-       <span  className='quantity-manip' style={{padding:' 0 0.1rem 0 0.1rem',borderLeft:'1px solid rgb(179, 179, 167)'}} onClick ={()=>handleIncrease(id)}>+</span>
+       <span  className='quantity-manip' style={{padding:' 0 0.1rem 0 0.1rem',borderLeft:'1px solid black'}} onClick ={()=>handleIncrease(id)}>+</span>
       </div>
        
     </section>

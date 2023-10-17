@@ -1,20 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import {items} from '../resources/data.js'
 import { useGlobalContext } from '../context.js'
 import { useEffect } from 'react'
+import {reviews} from '../resources/reviews.js'
+import Reviews from '../components/Reviews.js'
 const SingleItem = () => {
   const {cartItems,setCartItems,setModal,modal} = useGlobalContext();
-  const [showContent,setShowContent] = React.useState(false);
-     const {id} = useParams();
-    let ourId = parseInt(id);
+  const [showContent,setShowContent] = useState(false);
+  
+  const [rating,setRating] = useState('');
+  const [comment,setComment] = useState('');
+  const [info,setInfo] = useState('');
 
-    let myItem = items.filter((item)=>{
+  
+  useEffect(()=>{
+      setTimeout(()=>{
+        setModal('');
+      },2000)
+    },[modal])
+  const {id} = useParams();
+  let ourId = parseInt(id);
+
+  let myItem = items.filter((item)=>{
    if(item.id === ourId)
    return item;
    });
 
-   const addToCart = () =>{
+  const addToCart = () =>{
  
      if(cartItems.length === 0){
       setCartItems([{id:ourId,title,price,img,amount:1}]);
@@ -40,13 +53,19 @@ if (!repeatedItem) {
     }
     setModal('Item Added To your Bag');
     }
-     useEffect(()=>{
-      setTimeout(()=>{
-        setModal('');
-      },2000)
-    },[modal])
+    
  const {img,title,description,price} = myItem[0];
-  return (
+  const filteredReviews =reviews.filter(product => product.item === title );
+  const [review,setReview] = useState(filteredReviews);
+ const handleSubmit = (e)=>{
+    e.preventDefault();
+    const newReview = {rating,username:'anonymous',description:info,reviewTitle:comment}
+    setReview([...review,newReview]);
+    setComment('');
+    setInfo('');
+    setRating('');
+  }
+ return (
     <>
      {modal &&
     <article className='modal-message'>{modal}</article>
@@ -66,8 +85,36 @@ if (!repeatedItem) {
          </p>
           <button className='single-add-btn' onClick={addToCart}>Add To Cart</button>
          </section>
-      
+        
         </div>
+        <section className="feedback">
+          <h2 className='feedback-header'>Customer Reviews</h2>
+         <div className="reviews">
+          {
+            review.length === 0 ?<p style={{textAlign:'center',color:'red'}}>No Reviews yet.</p>:
+            review.map((curr_review,index)=>{
+              return <Reviews key ={index}{...curr_review}></Reviews>
+            })
+          }
+          </div> 
+         
+          <form onSubmit={handleSubmit} className='feedback-form'>
+             <h3>Your Valuable feedback</h3>
+            <label htmlFor="rating">Ratings : 
+            <input type="number" min={1} max={5} name="rating" id="rating" value={rating} onChange={(e)=>setRating(e.target.value)}/>
+            </label>
+            <label htmlFor="comment">Comment :
+            <input type="text" name="comment" id="comment" value={comment} onChange={(e)=>setComment(e.target.value)} />
+            </label>
+            <label htmlFor="description">Description :
+            <input type="text" name="description" id="description"  value={info} onChange={(e)=>setInfo(e.target.value)}/>
+            </label>
+            <button type="submit" className='add-btn'>Submit</button>
+            
+            
+          </form>
+          
+        </section>
        
         </>
   )

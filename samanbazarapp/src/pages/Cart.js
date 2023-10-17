@@ -32,7 +32,7 @@ const Cart = () => {
     {modal ===''? <>
     <div className="emoji-container"><BsEmojiSmileUpsideDownFill></BsEmojiSmileUpsideDownFill></div>
     <h3>Your Bag Seems To Be Empty.</h3>
-    <Link to="/products" style={{padding:'2rem'}}>Continue Shopping...</Link>
+    <Link to="/products" className='product-redirect-link'>Continue Shopping...</Link>
     </>
     :''}
     </div>);
@@ -45,7 +45,7 @@ const Cart = () => {
       {cartItems.map((item)=>{
         return <CartItem key ={item.id} {...item}></CartItem>
       })}
-      <p style={{fontSize:'1.2rem',textAlign:'center',marginBottom:'1rem'}}>You need to pay: <b>{finalAmount}$</b></p>
+      <p style={{fontSize:'inherit',textAlign:'center',marginBottom:'1rem'}}>You need to pay: <b>{finalAmount}$</b></p>
       <button className='order-btn' onClick={handlePlaceOrderClick}>Place Order</button>
      
     </main>

@@ -1,7 +1,7 @@
 export const items = [
 {
 id:1,
-img:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvZXN8ZW58MHx8MHx8fDA%3D&w=1000&q=80",
+img:"https://images.unsplash.com/photo-1460353581641-37baddab0fa2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c2hvZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=1000&q=60",
 title:"Shoes",
 description:'shoes built with magical adidas fabric',
 price: 190,
@@ -19,7 +19,7 @@ category: 'Electronics'
 },
 {
 id:3,
-img:"https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bW9uaXRvcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+img:"https://images.unsplash.com/photo-1588200908342-23b585c03e26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bW9uaXRvcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60",
 title:"Monitor",
 description:"15 inch monitor with full LED display",
 price: 290,
@@ -28,7 +28,7 @@ category: 'Electronics'
 },
 {
 id:4,
-img:"https://images.unsplash.com/photo-1587829741301-dc798b83add3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a2V5Ym9hcmR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+img:"https://images.unsplash.com/photo-1584727151652-d09b17ebf23f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fGtleWJvYXJkfGVufDB8fDB8fHww&auto=format&fit=crop&w=1000&q=60",
 title:"Keyboard",
 description:"apple keyboard with lightning smooth keys and can be connected with bluetooth",
 price: 120,
@@ -70,9 +70,9 @@ category: 'Electronics'
 ,
 {
 id:9,
-img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dCUyMHNoaXJ0fGVufDB8fDB8fHww&auto=format&fit=crop&w=1000&q=60",
+img:"https://plus.unsplash.com/premium_photo-1661576995732-bd66c05409e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d2hpdGUlMjB0JTIwc2hpcnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
 title:"Round neck t-shirt",
-description:" premium quality cotton t-shirt,white in color with premium qiality fabric",
+description:" white colored premium quality cotton t-shirt",
 price: 299.99,
 category: 'Lifestyle'
 },
@@ -133,7 +133,7 @@ price: 49.99,
 category: 'Sports'
 },{
     id:17,
-img:"https://plus.unsplash.com/premium_photo-1663013729768-8fcfe4cda447?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmFzaGlvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60",
+img:"https://images.unsplash.com/photo-1637852129573-7ed9bcc37da8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGdyZWVuJTIwZHJlc3Nlc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
 title:"Polga Dots Green Dress",
 description:"Made of comfortable and premium fabric,",
 price: 149.99,
@@ -141,7 +141,7 @@ category: 'Lifestyle'
 },
 {
     id:18,
-img:"https://images.unsplash.com/photo-1529139574466-a303027c1d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZmFzaGlvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=1000&q=60",
+img:"https://images.unsplash.com/photo-1515614466515-e512e497a047?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGRlbmltJTIwamFja2V0c3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
 title:"Gucci Denim jacket",
 description:"Built with excellent denim material",
 price: 199.99,

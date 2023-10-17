@@ -1,17 +1,22 @@
 import React, { useEffect } from 'react'
 import { useGlobalContext } from '../context'
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 const Item = ({id,title,price,img}) => {
-  const {cartItems,setCartItems,setModal,modal} = useGlobalContext();
-
-    
+  const {setShowSidebar,showSidebar} = useGlobalContext();
+  const navigate = useNavigate();
+  const handleNavigate = ()=>{
+    if(showSidebar){
+      setShowSidebar(false);
+    }
+    navigate(`/item/${id}`);
+  }  
   return (
-   <section className = "main-item">
+   <section className = "main-item" onClick={handleNavigate}>
          <img className='item-img' src={img} alt="item-img" />
     <div className="item-container">
-        <Link className='item-link' to={`/item/${id}`}>{title}</Link>
-        <p>Price:{price}$</p>
-        {/* <button className='add-btn' onClick={addToCart} >Add To Cart</button> */}
+        <p style={{color:'black'}}>{title}</p>
+        <p>Price: ₹{price}</p>
+      
     </div>
    </section>
   )

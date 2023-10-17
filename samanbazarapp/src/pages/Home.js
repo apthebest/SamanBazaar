@@ -1,27 +1,34 @@
 import React from 'react'
-
-import Item from '../components/Item'
-import {items} from '../resources/data'
-import {BsFillBagFill} from 'react-icons/bs'
-import { useGlobalContext } from '../context'
 import { Link } from 'react-router-dom'
-
+import {items} from '../resources/data'
+import{useNavigate} from 'react-router-dom'
+import {AiFillRightCircle,AiFillLeftCircle,} from 'react-icons/ai'
 const Home = () => {
+  const [pictureIndex,setPictureIndex] = React.useState(0);
+  const navigate = useNavigate();
+  const size = items.length/2;
  
+  
+ const redirectToProduct = ()=>{
+  navigate("/products")
+ }
   return (
     <main className='home'>
-    <div className="home-heading">
-      SamanBazaar.
-    </div>
-   
-    <div style={{position:'relative',top:'-16rem'}} >
-      Redefining the way you shop!!
-    </div>
-      {/* <img  className="home-img" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2hvcHBpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=600&q=60" alt="samanbazaar-img"></img> */}
-
-    <div style={{position:'relative',top:'-17rem'}}>
-      <Link  className='product-link' to="/products">Explore our Products</Link>
-    </div>
+      
+      <h2>We're SAMANBAZAAR</h2>
+      <h3>Your One Stop Solution for almost "EvErYtHiNg".</h3>
+      <section className="home-img-container">
+      <span className="img-manip" onClick={()=>{setPictureIndex((size+pictureIndex-1)%size)}}>
+        <AiFillLeftCircle></AiFillLeftCircle>
+      </span>
+      <img className='home-img' src={items[pictureIndex].img} onClick ={redirectToProduct} alt="" />
+     <span className="img-manip" onClick={()=>setPictureIndex((pictureIndex+1)%size)}>
+        <AiFillRightCircle></AiFillRightCircle>
+      </span>
+      </section>
+      <span className='home-txt'>
+       <Link to="/products" style={{textDecoration:'none',color:'inherit'}}>We Deal in Electronics, Lifestyle, Sports and many more..</Link>
+      </span>
     </main>
   )
 }
