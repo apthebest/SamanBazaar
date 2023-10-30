@@ -28,7 +28,7 @@ category: 'Electronics'
 },
 {
 id:4,
-img:"https://images.unsplash.com/photo-1584727151652-d09b17ebf23f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDN8fGtleWJvYXJkfGVufDB8fDB8fHww&auto=format&fit=crop&w=1000&q=60",
+img:"https://images.unsplash.com/photo-1642053200545-32151e1081b9?auto=format&fit=crop&q=60&w=1000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1lY2hhbmljYWwlMjBrZXlib2FyZHxlbnwwfHwwfHx8MA%3D%3D",
 title:"Keyboard",
 description:"apple keyboard with lightning smooth keys and can be connected with bluetooth",
 price: 120,

@@ -26,7 +26,7 @@ const Navbar = () => {
           <Link className='link' to="/">Home</Link>        
           <Link className='link' to="/products">Products</Link>        
           <Link className='link' to="/about">About</Link>
-          <Link className='link'  to="/cart" > <BsFillCartFill></BsFillCartFill><span style={{fontSize:'0.7rem',backgroundColor:' rgb(228, 235, 243)'}}>{cartItems.length>0?`(${cartItems.length})`:''}</span></Link>
+          <Link className='link'  to="/cart" > <BsFillCartFill></BsFillCartFill><span style={{fontSize:'0.7rem',color:'yellow'}}>{cartItems.length>0?`(${cartItems.length})`:''}</span></Link>
 
           
        

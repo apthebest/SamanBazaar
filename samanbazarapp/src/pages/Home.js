@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <main className='home'>
       
-      <h2>We're SAMANBAZAAR</h2>
+     
       <h3>Your One Stop Solution for almost "EvErYtHiNg".</h3>
       <section className="home-img-container">
       <span className="img-manip" onClick={()=>{setPictureIndex((size+pictureIndex-1)%size)}}>
